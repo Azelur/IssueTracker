@@ -1,1 +1,3 @@
 rootProject.name = 'IssueTracker'
+include 'github'
+

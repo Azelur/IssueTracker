@@ -3,16 +3,23 @@ package geiffel.da4.issuetracker.user;
 
 import geiffel.da4.issuetracker.exceptions.ResourceAlreadyExistsException;
 import geiffel.da4.issuetracker.exceptions.ResourceNotFoundException;
+import geiffel.da4.issuetracker.projet.Projet;
 import geiffel.da4.issuetracker.utils.LocalService;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@Qualifier("local")
 public class UserLocalService extends LocalService<User, Long> implements UserService {
 
 
-    public UserLocalService() { super(); }
+    public UserLocalService() {
+        super();
+        this.allValues.add(new User(1L, "Machin", Fonction.DEVELOPPER));
+    }
 
     public UserLocalService(List<User> users) {
         super(users);
@@ -21,6 +28,11 @@ public class UserLocalService extends LocalService<User, Long> implements UserSe
     @Override
     public List<User> getAll() {
         return super.getAll();
+    }
+
+    @Override
+    public List<Projet> getById() {
+        return null;
     }
 
     @Override

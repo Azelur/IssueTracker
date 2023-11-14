@@ -2,6 +2,7 @@ package geiffel.da4.issuetracker.utils;
 
 
 import geiffel.da4.issuetracker.exceptions.ResourceNotFoundException;
+import geiffel.da4.issuetracker.projet.Projet;
 
 import java.beans.PropertyDescriptor;
 import java.util.ArrayList;
@@ -89,6 +90,8 @@ public abstract class LocalService<T1, T2> {
             throw new ResourceNotFoundException("", value);
         }
     }
+
+    public abstract List<Projet> getById();
 
     /**
      * Un Record permettant de renvoyer l'index d'un objet dans le service local ainsi que cet objet
