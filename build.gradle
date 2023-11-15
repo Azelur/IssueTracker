@@ -26,6 +26,14 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
+sonar {
+    properties {
+        property "sonar.projectKey", "Azelur_IssueTracker"
+        property "sonar.organization", "sonarissuetracker"
+        property "sonar.host.url", "https://sonarcloud.io"
+    }
+}
+
 tasks.named('test') {
     useJUnitPlatform()
 }
