@@ -9,7 +9,7 @@ group = 'geiffel.da4'
 version = '0.0.1-SNAPSHOT'
 
 java {
-    sourceCompatibility = '17'
+    sourceCompatibility = '20'
 }
 
 repositories {
